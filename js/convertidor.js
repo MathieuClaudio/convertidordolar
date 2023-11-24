@@ -6,6 +6,7 @@ const pesosInput = document.getElementById('pesos');
 const conversionElement = document.getElementById('conversion');
 const blueMonedaElement = document.getElementById('blueMoneda');
 const pesoArgentinoElement = document.getElementById('pesoArgentino');
+const loadingElement = document.querySelector("div#loading");
 
 // Función para formatear la fecha y hora en español
 function formatearFecha(fecha) {
@@ -36,18 +37,34 @@ async function obtenerCotizacionDolarBlue() {
     }
 }
 
-// Función para convertir pesos a Dólar Blue
+
+// Función para convertir pesos a Dólar Blue o viceversa
 function convertirAPesoBlue() {
     const cantidadPesos = parseFloat(pesosInput.value) || 0;
+    const direccionConversion = document.getElementById('direccionConversion').value;
     const cotizacionActual = obtenerCotizacionDolarBlue();
+    loadingElement.style.display = "block";
 
     cotizacionActual.then((cotizacion) => {
-        const resultadoConversion = cantidadPesos / cotizacion.venta;
+        let resultadoConversion;
+
+        if (direccionConversion === 'pesoADolar') {
+            resultadoConversion = cantidadPesos / cotizacion.venta;
+            blueMonedaElement.textContent = 'USD';
+            pesoArgentinoElement.textContent = cantidadPesos.toFixed(2) + " ARS = ";
+        } else if (direccionConversion === 'dolarAPeso') {
+            resultadoConversion = cantidadPesos * cotizacion.compra;
+            blueMonedaElement.textContent = 'ARS';
+            pesoArgentinoElement.textContent = cantidadPesos.toFixed(2) + " USD = ";
+        }
 
         // Actualizar elementos HTML con el resultado de la conversión
-        conversionElement.textContent = resultadoConversion.toFixed(2);
-        blueMonedaElement.textContent = 'USD';
-        pesoArgentinoElement.textContent = cantidadPesos.toFixed(2) + " ARS = ";
+        // Agregué un timer para darle un efecto de tardanza 
+        setTimeout(() => {
+            conversionElement.textContent = resultadoConversion.toFixed(2);
+            loadingElement.style.display = "none";
+            $('#mensaje').addClass('show');
+        }, 2000);
     });
 }
 

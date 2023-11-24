@@ -7,6 +7,7 @@
     <title>Convertidor de Dólar Blue</title>
     <link rel="icon" href="img/logo.png" type="image/png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
@@ -64,11 +65,23 @@
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label for="pesos" class="form-label">Peso Argentino</label>
+                    <label for="direccionConversion" class="form-label">Dirección de Conversión</label>
+                    <select id="direccionConversion" class="form-select">
+                        <option value="pesoADolar">Peso a Dólar Blue</option>
+                        <option value="dolarAPeso">Dólar Blue a Peso</option>
+                    </select>
+                </div>                
+                <div class="mb-3">
+                    <label for="pesos" class="form-label">Valor a convertir</label>
                     <input type="number" id="pesos" value="1" class="form-control">
                 </div>
-                <a href="#" class="btn btn-primary">Convertir a Dolar Blue</a>
-                <div class="m-3 alert alert-warning" role="alert">
+                <a href="#" class="btn btn-primary">Convertir</a>
+
+                <div id="loading">
+                    <img src="img/loading1.gif" alt="Loading">
+                    <p>Espere un momento...</p>
+                </div> 
+                <div class="m-3 alert alert-warning fade" role="alert" id="mensaje">
                     <span id="pesoArgentino"><!-- completar con "pesos" --></span>
                                                             <span id="conversion"><!-- completar con el total de la conversión --></span> 
                                                             <span id="blueMoneda"><!-- completar con "moneda" --></span>
@@ -88,6 +101,7 @@
 
     </section>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="js/convertidor.js"></script>
 
 </body>

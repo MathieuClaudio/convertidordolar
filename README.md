@@ -18,3 +18,4 @@ Conceptos a evaluar y que se tendrán en cuenta:
 ```
 - [x] Debe entregar link de github con código fuente y link de proyecto en producción para ser visible la app desde internet
 <a href="https://mathieuclaudio.github.io/convertidordolar" target="_blank">Mi Convertidor de Pesos a Dolar Blue en GitHub Pages</a>
+Notas: para convertir de Peso a Dólar Blue use el valor de "venta" y para Dólar Blue a Peso el volor de "compra"
