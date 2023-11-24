@@ -1,5 +1,5 @@
 # Convertidor Dolar Blue
-Tarea Aplicaciones Progresivas
+Tarea Aplicaciones Web Cliente
 
 ## Objetivo
 Objetivo del parcial: Crear un Convertidor de Dólar Blue Full Responsive
