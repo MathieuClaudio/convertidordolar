@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Dólar Blue</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+
+    <section class="container-fluid">
+        <!-- Menú de navegación -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><span class="material-symbols-outlined">currency_exchange</span>
+                    Convertidor de Dólar Blue</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Card de cotización actual -->
+        <div class="card">
+            <div class="card-header">
+                COTIZACIONES DÓLAR BLUE
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Dolar Blue</h5>
+                <p class="card-text">Último valor obtenido al <span id="fechaActualizacion"><!-- completar con "fechaActualizacion" --></span></p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Compra</th>
+                            <th scope="col">Venta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="blueCompra"><!-- completar con "compra" --></td>
+                            <td id="blueVenta"><!-- completar con "venta" --></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Card de conversión de peso argentino a dolar blue -->
+        <div class="card">
+            <div class="card-header">
+                CONVERSOR DE DIVISAS
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="pesos" class="form-label">Peso Argentino</label>
+                    <input type="number" id="pesos" value="1" class="form-control">
+                </div>
+                <a href="#" class="btn btn-primary">Convertir a Dolar Blue</a>
+                <div class="m-3 alert alert-warning" role="alert">
+                    <span id="pesoArgentino"></span> ARS = 
+                                                            <span id="conversion"><!-- completar con el total de la conversión --></span> 
+                                                            <span id="blueMoneda"><!-- completar con "moneda" --></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-4 p-2 bg-primary text-center">
+            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="./"
+                aria-label="currency_exchange">
+                <span class="material-symbols-outlined">currency_exchange</span> &nbsp;
+                <span class="fs-5 text-white"> Laboratorio de Aplicaciones Web Cliente - Convertidor de Dólar Blue -
+                    Claudio Mathieu</span>
+            </a>
+        </footer>
+
+    </section>
+
+    <script src="js/convertidor.js"></script>
+
+</body>
+
+</html>
