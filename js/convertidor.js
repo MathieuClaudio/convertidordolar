@@ -24,11 +24,8 @@ async function obtenerCotizacionDolarBlue() {
     try {
         const respuesta = await fetch('https://dolarapi.com/v1/dolares/blue');
         const datos = await respuesta.json();
-        console.log(datos);
 
         // Actualizar elementos HTML con la cotización
-        console.log(datos.fechaActualizacion);
-        console.log(formatearFecha(datos.fechaActualizacion));
         fechaActualizacionElement.textContent = formatearFecha(datos.fechaActualizacion);
         blueCompraElement.textContent = datos.compra;
         blueVentaElement.textContent = datos.venta;
@@ -54,7 +51,7 @@ function convertirAPesoBlue() {
     });
 }
 
-// Evento clic en el botón de conversión
+// Evento clic en el botón de Convertir a Dolar Blue
 const btnConvertir = document.querySelector('.btn-primary');
 btnConvertir.addEventListener('click', convertirAPesoBlue);
 
