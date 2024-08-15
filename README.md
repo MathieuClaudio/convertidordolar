@@ -2,7 +2,8 @@
 Aplicación Web Cliente - Ejemplo simple consumo de API con Javascript
 
 ## Objetivo
-Objetivo: Crear un Convertidor de Dólar Full Responsive
+Objetivo: Crear un Convertidor de Dólar Full Responsive.
+
 Requisitos:
 - [x] Diseño full responsive
 - [x] Consumo de la Api https://dolarapi.com/docs/
