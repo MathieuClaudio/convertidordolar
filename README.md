@@ -1,11 +1,14 @@
 # Convertidor Dolar Blue
-Tarea Aplicaciones Web Cliente
+Aplicación Web Cliente - Ejemplo simple consumo de API con Javascript
 
 ## Objetivo
-Objetivo del parcial: Crear un Convertidor de Dólar Blue Full Responsive
-Conceptos a evaluar y que se tendrán en cuenta:
-- [x] Diseño full responsive (mínimo tamaño destktop, tablet y smartphone)
+Objetivo: Crear un Convertidor de Dólar Full Responsive
+Requisitos:
+- [x] Diseño full responsive
 - [x] Consumo de la Api https://dolarapi.com/docs/
+- [x] Elejir tipo de conversión: Blue, Bolsa, Contado con liquidación, etc.
+- [x] <a href="https://mathieuclaudio.github.io/convertidordolar" target="_blank">Mi Convertidor de Pesos a Dolar en GitHub Pages</a>
+- [x] Para convertir de Peso a Dólar usar el valor de "venta" y para Dólar a Peso el valor de "compra"
 ```bash
 {
   "compra": "number",
@@ -16,6 +19,4 @@ Conceptos a evaluar y que se tendrán en cuenta:
   "fechaActualizacion": "string"
 }
 ```
-- [x] Debe entregar link de github con código fuente y link de proyecto en producción para ser visible la app desde internet
-<a href="https://mathieuclaudio.github.io/convertidordolar" target="_blank">Mi Convertidor de Pesos a Dolar Blue en GitHub Pages</a>
-Notas: para convertir de Peso a Dólar Blue use el valor de "venta" y para Dólar Blue a Peso el volor de "compra"
+
