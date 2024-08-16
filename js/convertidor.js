@@ -8,6 +8,7 @@ const blueMonedaElement = document.getElementById('blueMoneda');
 const pesoArgentinoElement = document.getElementById('pesoArgentino');
 const loadingElement = document.querySelector("div#loading");
 
+
 // Función para formatear la fecha y hora en español
 function formatearFecha(fecha) {
     try {
@@ -21,9 +22,9 @@ function formatearFecha(fecha) {
 }
 
 // Función para obtener la cotización del Dólar Blue
-async function obtenerCotizacionDolarBlue() {
+async function obtenerCotizacionDolarBlue(tipo = "blue") {
     try {
-        const respuesta = await fetch('https://dolarapi.com/v1/dolares/blue');
+        const respuesta = await fetch('https://dolarapi.com/v1/dolares/' + tipo);
         const datos = await respuesta.json();
 
         // Actualizar elementos HTML con la cotización
@@ -42,7 +43,8 @@ async function obtenerCotizacionDolarBlue() {
 function convertirAPesoBlue() {
     const cantidadPesos = parseFloat(pesosInput.value) || 0;
     const direccionConversion = document.getElementById('direccionConversion').value;
-    const cotizacionActual = obtenerCotizacionDolarBlue();
+    const tipoDolarElement = document.getElementById('tipoDolar').value;
+    const cotizacionActual = obtenerCotizacionDolarBlue(tipoDolarElement);
     loadingElement.style.display = "block";
 
     cotizacionActual.then((cotizacion) => {
@@ -57,7 +59,7 @@ function convertirAPesoBlue() {
             blueMonedaElement.textContent = 'ARS';
             pesoArgentinoElement.textContent = cantidadPesos.toFixed(2) + " USD = ";
         }
-
+        dolarTipoCoversion.textContent = 'Tipo de dolar usado para la conversión: ' + tipoDolarElement;
         // Actualizar elementos HTML con el resultado de la conversión
         // Agregué un timer para darle un efecto de tardanza 
         setTimeout(() => {
@@ -68,7 +70,7 @@ function convertirAPesoBlue() {
     });
 }
 
-// Evento clic en el botón de Convertir a Dolar Blue
+// Evento clic en el botón de Convertir a Dolar
 const btnConvertir = document.querySelector('.btn-primary');
 btnConvertir.addEventListener('click', convertirAPesoBlue);
 

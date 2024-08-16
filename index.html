@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertidor de Dólar Blue</title>
+    <title>Convertidor Dólar / Peso Argentino</title>
     <link rel="icon" href="img/logo.png" type="image/png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,8 +17,10 @@
         <!-- Menú de navegación -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><span class="material-symbols-outlined">currency_exchange</span>
-                    Convertidor de Dólar Blue</a>
+                <a class="navbar-brand" href="/convertidordolar">
+                    <span class="material-symbols-outlined">currency_exchange</span>
+                    Convertidor Dólar / Peso Argentino
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,7 +28,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="/convertidordolar/">Inicio</a>
                         </li>
                     </ul>
                 </div>
@@ -36,7 +38,7 @@
         <!-- Card de cotización actual -->
         <div class="card">
             <div class="card-header">
-                COTIZACIONES DÓLAR BLUE
+                COTIZACIONES DÓLAR
             </div>
             <div class="card-body">
                 <h5 class="card-title">Dolar Blue</h5>
@@ -58,17 +60,26 @@
             </div>
         </div>
 
-        <!-- Card de conversión de peso argentino a dolar blue -->
+        <!-- Card de conversión de peso argentino a dolar -->
         <div class="card">
             <div class="card-header">
                 CONVERSOR DE DIVISAS
             </div>
             <div class="card-body">
                 <div class="mb-3">
+                    <label for="direccionConversion" class="form-label">Tipo de Dólar</label>
+                    <select id="tipoDolar" class="form-select">
+                        <option value="oficial">Oficial</option>
+                        <option value="blue" selected>Blue</option>
+                        <option value="bolsa">Bolsa</option>
+                        <option value="contadoconliqui">Contado con liquidación</option>
+                    </select>
+                </div>                 
+                <div class="mb-3">
                     <label for="direccionConversion" class="form-label">Dirección de Conversión</label>
                     <select id="direccionConversion" class="form-select">
-                        <option value="pesoADolar">Peso a Dólar Blue</option>
-                        <option value="dolarAPeso">Dólar Blue a Peso</option>
+                        <option value="pesoADolar">Peso a Dólar</option>
+                        <option value="dolarAPeso">Dólar a Peso</option>
                     </select>
                 </div>                
                 <div class="mb-3">
@@ -83,8 +94,10 @@
                 </div> 
                 <div class="m-3 alert alert-warning fade" role="alert" id="mensaje">
                     <span id="pesoArgentino"><!-- completar con "pesos" --></span>
-                                                            <span id="conversion"><!-- completar con el total de la conversión --></span> 
-                                                            <span id="blueMoneda"><!-- completar con "moneda" --></span>
+                    <span id="conversion"><!-- completar con el total de la conversión --></span> 
+                    <span id="blueMoneda"><!-- completar con "moneda" --></span>
+                    <br>
+                    <span id="dolarTipoCoversion"><!-- completar con el tipo de conversión elegida --></span>
                 </div>
             </div>
         </div>
@@ -94,8 +107,7 @@
             <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="./"
                 aria-label="currency_exchange">
                 <span class="material-symbols-outlined">currency_exchange</span> &nbsp;
-                <span class="fs-5 text-white"> Laboratorio de Aplicaciones Web Cliente - Convertidor de Dólar Blue -
-                    Claudio Mathieu</span>
+                <span class="fs-5 text-white"> Aplicaciones Web Cliente - Convertidor de Dólar / Peso Argentino - Claudio Mathieu</span>
             </a>
         </footer>
 
